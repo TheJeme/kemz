@@ -304,11 +304,11 @@ const commands = {
 				value: `\`${prefix}stats\` \`${prefix}info\` \`${prefix}serverinfo\` \`${prefix}remindme\` \`${prefix}remind\` \`${prefix}avatar\` \`${prefix}shop\` \`${prefix}money\``,
 			},
 			{
-				name: "Voice",
+				name: "Voice -- 7",
 				value: `\`${prefix}join\` \`${prefix}add\` \`${prefix}queue\` \`${prefix}play\` \`${prefix}pause\` \`${prefix}resume\` \`${prefix}skip\``,
 			},
 			{
-				name: "Games -- 6",
+				name: "Games -- 5",
 				value: `\`${prefix}hangman\` \`${prefix}coinflip\` \`${prefix}dice\` \`${prefix}roll\` \`${prefix}rps\``,
 			},
 			{
