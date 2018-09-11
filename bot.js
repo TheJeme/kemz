@@ -137,7 +137,7 @@ client.on('message', msg => {
 
 
 new TicTacToe({
-	api_token: ("NDg1MDk1MTg3MDQzOTc1MTgz.DmrnUg.apeigamAy1yD5fcICy7NBqMjUI8"),
+	api_token: (token),
 	channel: "tictactoe",
 	command: "tictactoe",
 	auto_clear: true,
@@ -747,4 +747,4 @@ client.on('message', msg => {
 });
 
 
-client.login("NDg1MDk1MTg3MDQzOTc1MTgz.DmrnUg.apeigamAy1yD5fcICy7NBqMjUI8");
+client.login(token);
