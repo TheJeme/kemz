@@ -14,6 +14,7 @@ const TicTacToe = require("./ttt.js");
 const money = require('discord-money');
 const DatabaseScripts = require('./tools.js');
 const channel = new Discord.Channel(client);
+const yt = require('ytdl-core');
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 require('./hangman.js');
