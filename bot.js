@@ -209,7 +209,7 @@ const commands = {
 			},
 			{
 				name: "__Games__",
-				value: `**${prefix}tictactoe** : "Play Tic-Tac-Toe" \n **${prefix}hangman** : "Play Hangman" \n **${prefix}coinflip** : "Play coinflip" \n **${prefix}dice** : "Rolls a dice" \n **${prefix}roll**" : "Sends random number between 0-100" \n **${prefix}rps** : "Play Rock-Paper-Scissors"`,
+				value: `**${prefix}hangman** : "Play Hangman" \n **${prefix}coinflip** : "Play coinflip" \n **${prefix}dice** : "Rolls a dice" \n **${prefix}roll**" : "Sends random number between 0-100" \n **${prefix}rps** : "Play Rock-Paper-Scissors"`,
 			},
 			{
 				name: "__Fun__",
@@ -238,7 +238,7 @@ const commands = {
 			},
 			{
 				name: "Games -- 6",
-				value: `\`${prefix}tictactoe\` \`${prefix}hangman\` \`${prefix}coinflip\` \`${prefix}dice\` \`${prefix}roll\` \`${prefix}rps\``,
+				value: `\`${prefix}hangman\` \`${prefix}coinflip\` \`${prefix}dice\` \`${prefix}roll\` \`${prefix}rps\``,
 			},
 			{
 				name: "Fun -- 8",
