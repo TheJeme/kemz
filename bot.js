@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "!";
-const passes_ = 1;
 const version = ("1.0");
 const moment = require('moment');
 const arrowRight = ":arrow_right:";
@@ -14,7 +13,6 @@ const TicTacToe = require("./ttt.js");
 const money = require('discord-money');
 const DatabaseScripts = require('./tools.js');
 const channel = new Discord.Channel(client);
-const yt = require('ytdl-core');
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 require('./hangman.js');
@@ -197,71 +195,7 @@ function coinflip() {
 	return Math.floor(Math.random() * 2) + 1;
 };
 
-let queue = {};
 const commands = {
-	'play': (msg) => {
-		if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with **${prefix}add**`);
-		if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
-		if (queue[msg.guild.id].playing) return msg.channel.send('Already Playing');
-		let dispatcher;
-		queue[msg.guild.id].playing = true;
-
-		console.log(queue);
-		(function play(song) {
-			console.log(song);
-			if (song === undefined) return msg.channel.send('Queue is empty').then(() => {
-				queue[msg.guild.id].playing = false;
-				msg.member.voiceChannel.leave();
-			});
-			msg.channel.send(`Playing: **${song.title}** as requested by: **${song.requester}**`);
-			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : passes_ });
-			let collector = msg.channel.createCollector(m => m);
-			collector.on('collect', m => {
-				if (m.content.startsWith(prefix + 'pause')) {
-					msg.channel.send('paused').then(() => {dispatcher.pause();});
-				} else if (m.content.startsWith(prefix + 'resume')){
-					msg.channel.send('resumed').then(() => {dispatcher.resume();});
-				} else if (m.content.startsWith(prefix + 'skip')){
-					msg.channel.send('Skipped').then(() => {dispatcher.end();});
-        }
-        
-	});
-			dispatcher.on('end', () => {
-				collector.stop();
-				play(queue[msg.guild.id].songs.shift());
-			});
-			dispatcher.on('error', (err) => {
-				return msg.channel.send('error: ' + err).then(() => {
-					collector.stop();
-					play(queue[msg.guild.id].songs.shift());
-				});
-			});
-		})(queue[msg.guild.id].songs.shift());
-	},
-	'join': (msg) => {
-		return new Promise((resolve, reject) => {
-			const voiceChannel = msg.member.voiceChannel;
-			if (!voiceChannel || voiceChannel.type !== 'voice') return msg.reply('I couldn\'t connect to your voice channel');
-			voiceChannel.join().then(connection => resolve(connection)).catch(err => reject(err));
-		});
-	},
-	'add': (msg) => {
-		let url = msg.content.split(' ')[1];
-		if (url == '' || url === undefined) return msg.channel.send('Invalid YouTube Link');
-		yt.getInfo(url, (err, info) => {
-			if(err) return msg.channel.send('Invalid YouTube Link');
-			if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
-			queue[msg.guild.id].songs.push({url: url, title: info.title, requester: msg.author.username});
-			msg.delete();
-			msg.channel.send(`added **${info.title}** to the queue`);
-		});
-	},
-	'queue': (msg) => {
-		if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with **${prefix}add**`);
-		let tosend = [];
-		queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Requested by: ${song.requester}`);});
-		msg.channel.send(`**Music Queue:** Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
-	},
 	'help': (msg) => {
 		const embed = {
 			"title": "Help",
@@ -270,10 +204,6 @@ const commands = {
 			{
 				name: "__General__",
 				value: `**${prefix}stats** : "Shows your stats" \n **${prefix}info** : "Shows information about this bot" \n **${prefix}serverinfo** : "Shows information about this server" \n **${prefix}remindme <time> <message>** : "More info with **${prefix}remindme**"\n **${prefix}remind <time> <message>** : "More info with **${prefix}remind**"\n **${prefix}avatar** : "Shows your avatar"\n **${prefix}shop** : "Shows shop"\n **${prefix}money** : "Shows your money"`,
-			},
-			{
-				name: "__Voice__",
-				value: `**${prefix}join** : "Join Voice channel of msg sender"\n **${prefix}add** : "Add a valid youtube link to the queue" \n**${prefix}queue** : "Shows the current queue" \n**${prefix}play** : "Plays the music" \n**${prefix}pause** : "Pauses the music" \n**${prefix}resume** : "Resumes the music" \n**${prefix}skip** : "Skips the playing song"`
 			},
 			{
 				name: "__Games__",
@@ -303,10 +233,6 @@ const commands = {
 			{
 				name: "General -- 8",
 				value: `\`${prefix}stats\` \`${prefix}info\` \`${prefix}serverinfo\` \`${prefix}remindme\` \`${prefix}remind\` \`${prefix}avatar\` \`${prefix}shop\` \`${prefix}money\``,
-			},
-			{
-				name: "Voice -- 7",
-				value: `\`${prefix}join\` \`${prefix}add\` \`${prefix}queue\` \`${prefix}play\` \`${prefix}pause\` \`${prefix}resume\` \`${prefix}skip\``,
 			},
 			{
 				name: "Games -- 5",
