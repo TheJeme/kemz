@@ -137,7 +137,7 @@ client.on('message', msg => {
 
 
 new TicTacToe({
-	api_token: (token),
+	api_token: (process.env.token),
 	channel: "tictactoe",
 	command: "tictactoe",
 	auto_clear: true,
@@ -747,4 +747,4 @@ client.on('message', msg => {
 });
 
 
-client.login(token);
+client.login(process.env.token);
