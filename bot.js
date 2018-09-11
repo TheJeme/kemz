@@ -211,7 +211,7 @@ const commands = {
 			},
 			{
 				name: "__Fun__",
-				value: `**${prefix}challenge** : "Sends random Fortnite Challenge" \n **${prefix}hug** : "Sends hug gif" \n **${prefix}kiss** : "Sends kiss gif" \n **${prefix}pat** : "Sends pat gif" \n **${prefix}daily** : "Get $100 every day" \n **${prefix}buy <item>** : "Buy things with money"`,
+				value: `**${prefix}challenge** : "Sends random Fortnite Challenge" \n **${prefix}hug** : "Sends hug gif" \n **${prefix}kiss** : "Sends kiss gif" \n **${prefix}pat** : "Sends pat gif" \n **${prefix}daily** : "Get $250 every day" \n **${prefix}buy <item>** : "Buy things with money"`,
 			},
 			{
 				name: "__Moderation__",
