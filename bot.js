@@ -9,7 +9,7 @@ const symbols = new RegExp(/!/);
 const blue = (3447003);
 const red = (0xff0000);
 const green = (0x00cd00);
-const TicTacToe = require("./ttt.js");
+/*const TicTacToe = require("./ttt.js");*/
 const money = require('discord-money');
 const DatabaseScripts = require('./tools.js');
 const channel = new Discord.Channel(client);
@@ -134,7 +134,7 @@ client.on('message', msg => {
 	
 });
 
-
+/*
 new TicTacToe({
 	api_token: (process.env.token),
 	channel: "tictactoe",
@@ -145,7 +145,7 @@ new TicTacToe({
 		end_victory: "%player% won the game!"
 	}
 })
-
+*/
 
 const hug = ["https://cdn.discordapp.com/attachments/199659095316234241/487270429866590218/IMG_20180808_122814.jpg", "https://i.imgur.com/wOmoeF8.gif", "https://i.imgur.com/r9aU2xv.gif", "https://i.imgur.com/ntqYLGl.gif", "https://i.imgur.com/4oLIrwj.gif", "https://i.imgur.com/niD8tPb.gif", "https://media1.tenor.com/images/e58eb2794ff1a12315665c28d5bc3f5e/tenor.gif?itemid=10195705", "https://media1.tenor.com/images/59804cda426c24178163d6a7b20eb057/tenor.gif?itemid=3532036", "https://media1.tenor.com/images/ff8a2ea033a2f87a35d895eebd09cbe8/tenor.gif?itemid=9856637", "https://media1.tenor.com/images/107e45330bc276137ed2b8fc6c93ecaa/tenor.gif?itemid=10309745", "https://media1.tenor.com/images/de06f8f71eb9f7ac2aa363277bb15fee/tenor.gif?itemid=10426436", "https://media1.tenor.com/images/6db54c4d6dad5f1f2863d878cfb2d8df/tenor.gif?itemid=7324587", "https://media1.tenor.com/images/4d89d7f963b41a416ec8a55230dab31b/tenor.gif?itemid=5166500",
 			 "https://media1.tenor.com/images/42922e87b3ec288b11f59ba7f3cc6393/tenor.gif?itemid=5634630", "https://media1.tenor.com/images/34a1d8c67e7b373de17bbfa5b8d35fc0/tenor.gif?itemid=8995974", "https://media1.tenor.com/images/54e97e0cdeefea2ee6fb2e76d141f448/tenor.gif?itemid=11378437", "https://media1.tenor.com/images/f2805f274471676c96aff2bc9fbedd70/tenor.gif?itemid=7552077", "https://media1.tenor.com/images/460c80d4423b0ba75ed9592b05599592/tenor.gif?itemid=5044460", "https://media1.tenor.com/images/44b4b9d5e6b4d806b6bcde2fd28a75ff/tenor.gif?itemid=9383138", "https://media1.tenor.com/images/bb841fad2c0e549c38d8ae15f4ef1209/tenor.gif?itemid=10307432", "https://media1.tenor.com/images/40aed63f5bc795ed7a980d0ad5c387f2/tenor.gif?itemid=11098589", "https://media1.tenor.com/images/72627a21fc298313f647306e6594553f/tenor.gif?itemid=9096291", "https://media1.tenor.com/images/adbfbc5c70e669c269ef8d4af1508242/tenor.gif?itemid=12449173",
