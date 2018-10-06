@@ -93,10 +93,10 @@ class Client {
 
         if (this._game.getOption("auto_clear"))
             this.clearChannel();
-/*
+
         if (welcomeMsg !== null)
             channel.send(welcomeMsg);
-    }*/
+    }
 
     sendBeginGame() {
         let msg = this._game.getOption("messages.begin_game");
