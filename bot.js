@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "!";
-const version = ("1.0");
+const version = ("1.1");
 const moment = require('moment');
 const arrowRight = ":arrow_right:";
 const authorID = 199651843800825856;
@@ -18,7 +18,7 @@ sql.open("./score.sqlite");
 require('./hangman.js');
 
 client.on("ready", () => {
-  client.user.setActivity(`${prefix}help`);
+  client.user.setActivity();
   console.log("Done!");
 });
 
