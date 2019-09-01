@@ -260,7 +260,7 @@ const commands = {
 			.setTitle("KemZ Information")
 			.setColor(blue)
 			.setThumbnail(client.user.avatarURL)
-			.setDescription(`Version: **${version} **\nCreated on: **31.8 2018** \nCreated by: **Jeme#6402**`)
+			.setDescription(`Version: **${version} **\nCreated on: **31.8 2018** \nCreated by: **Jeme#2039**`)
 		
 		msg.channel.send(botembed);
 	},
