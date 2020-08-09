@@ -211,7 +211,7 @@ const commands = {
 			},
 			{
 				name: "__Fun__",
-				value: `**${prefix}challenge** : "Sends random Fortnite Challenge" \n **${prefix}hug** : "Sends hug gif" \n **${prefix}kiss** : "Sends kiss gif" \n **${prefix}pat** : "Sends pat gif" \n **${prefix}daily** : "Get $250 every day" \n **${prefix}buy <item>** : "Buy things with money"`,
+				value: `**${prefix}hug** : "Sends hug gif" \n **${prefix}kiss** : "Sends kiss gif" \n **${prefix}pat** : "Sends pat gif" \n **${prefix}daily** : "Get $250 every day" \n **${prefix}buy <item>** : "Buy things with money"`,
 			},
 			{
 				name: "__Moderation__",
@@ -239,8 +239,8 @@ const commands = {
 				value: `\`${prefix}hangman\` \`${prefix}coinflip\` \`${prefix}dice\` \`${prefix}roll\` \`${prefix}rps\``,
 			},
 			{
-				name: "Fun -- 8",
-				value: `\`${prefix}challenge\` \`${prefix}hug\` \`${prefix}kiss\` \`${prefix}pat\` \`${prefix}kawaii\` \`${prefix}loli\` \`${prefix}daily\` \`${prefix}buy\``,
+				name: "Fun -- 6",
+				value: `\`${prefix}hug\` \`${prefix}kiss\` \`${prefix}pat\` \`${prefix}kawaii\` \`${prefix}daily\` \`${prefix}buy\``,
 			},
 			{
 				name: "Moderation -- 4",
