@@ -5,7 +5,7 @@
     "node": "12.x"
   },
   "description": "Best bot",
-  "main": "mybot.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
