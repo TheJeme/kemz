@@ -1,6 +1,9 @@
 {
   "name": "Kemz",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "Best bot",
   "main": "mybot.js",
   "scripts": {
